@@ -46,6 +46,23 @@ jobs:
           set +x
           python library/set_vars.py
 
+      - name: "Check Terraform Argument"
+        shell: bash
+        run: |
+          set +x
+          if [[ "${terraform_action_type}" != "plan" && "${terraform_action_type}" != "apply" && "${terraform_action_type}" != "destroy" ]]; then
+              echo """
+              - Arguments:
+              - --plan
+              - --apply
+              - --destroy
+          """
+          exit 1
+          else
+              echo "Terraform will execute ${terraform_action_type}"
+          fi
+
+
       - name: "Terraform init"
         shell: bash
         env:
