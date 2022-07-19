@@ -7,6 +7,9 @@ resource "aws_instance" "ec2_in" {
   instance_type = var.instance_size
   subnet_id = var.subnet
 
+  user_data = "${file("user-data/install_docker.sh")}"
+
+
   tags = {
     Name = var.instance_name
   }
