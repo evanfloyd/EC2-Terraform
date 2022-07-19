@@ -1,20 +1,25 @@
-module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "~> 3.0"
+provider "aws" {
+  region = "us-east-1"
+}
 
-  for_each = toset(["one", "two", "three"])
+terraform {
+  backend "s3" {
+    bucket         = "zebedee-test-terraform-remote-state"
+    key            = "dev/terraform.tfstate"
+    region         = "us-east-1"
+  }
+}
 
-  name = "instance-${each.key}"
+provider "aws" {
+  region  = "us-west-1"
+}
 
-  ami                    = "ami-0ca285d4c2cda3300"
-  instance_type          = "t2.nano"
-  key_name               = "nomad"
-  monitoring             = false
-  vpc_security_group_ids = ["sg-0cf03168198b87d42"]
-  subnet_id              = "subnet-0357bbe188bd1e4c8"
+resource "aws_instance" "ec2_in" {
+  ami           = var.ami_id
+  instance_type = var.instance_size
+  subnet_id = var.subnet
 
   tags = {
-    Terraform   = "true"
-    Environment = "dev"
+    Name = var.instance_name
   }
 }

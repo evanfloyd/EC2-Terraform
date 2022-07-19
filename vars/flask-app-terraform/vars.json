@@ -1,0 +1,4 @@
+{
+    "TF_VAR_domain_name": "example.com",
+    "TF_VAR_validation_method": "DNS"
+}
