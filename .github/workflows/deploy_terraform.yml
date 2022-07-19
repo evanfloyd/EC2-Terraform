@@ -6,7 +6,7 @@ on:
       catalog_item_name:
         description: "This the terraform template you want to deploy."
         required: true
-        default: flask-app-terraform
+        default: EC2-instance
       terraform_action_type:
         description: "terraform action type(plan,apply,destroy)"
         required: true
