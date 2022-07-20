@@ -13,3 +13,7 @@ variable "subnet" {
 variable "instance_name" {
   default = "evans-terraform"
 }
+
+variable "cidr_blocks" {
+  default = "68.230.55.226"
+}
