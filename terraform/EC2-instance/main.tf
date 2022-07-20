@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_vpc" "evans_vpc" {
-  cidr_block = "var.cidr_block"
+  cidr_block = var.cidr_block
 }
 
 resource "aws_instance" "ec2_in" {
