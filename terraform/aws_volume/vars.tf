@@ -11,5 +11,5 @@ variable "name" {
 }
 
 variable "device_name" {
-  default = /dev/sdh
+  default = "/dev/sdh"
 }
