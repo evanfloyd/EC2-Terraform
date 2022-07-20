@@ -61,5 +61,5 @@ resource "aws_volume_attachment" "volume_attach" {
 }
 
 resource "aws_vpc" "main" {
-  cidr_block = "${var.cidr_blocks}/32"
+  cidr_block = "${var.cidr_blocks}/16"
 }
