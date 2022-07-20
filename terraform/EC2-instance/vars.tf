@@ -23,7 +23,7 @@ variable "vpc_id" {
 }
 
 variable "availability_zone" {
-  default = "us-east-1"
+  default = "us-east-1c"
 }
 
 variable "size" {
