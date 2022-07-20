@@ -26,6 +26,7 @@ resource "aws_eip_association" "eip_assoc" {
 
 resource "aws_security_group" "evans_sg" {
 	  name        = "evans-security-group"
+    vpc_id      = var.vpc_id
 
 	  ingress {
 	    from_port   = 443

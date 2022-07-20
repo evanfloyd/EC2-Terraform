@@ -3,6 +3,7 @@
     "TF_VAR_instance_size": "t2.micro",
     "TF_VAR_subnet": "subnet-0585406403343a892",
     "TF_VAR_instance_name": "evans-terraform",
-    "TF_VAR_cidr_blocks": "68.230.55.226"
+    "TF_VAR_cidr_blocks": "68.230.55.226",
+    "TF_VAR_vpc_id": "vpc-0d3dd930d8dfb97e3"
   }
   

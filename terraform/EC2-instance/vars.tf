@@ -17,3 +17,7 @@ variable "instance_name" {
 variable "cidr_blocks" {
   default = "68.230.55.226"
 }
+
+variable "vpc_id" {
+  default = "vpc-0d3dd930d8dfb97e3"
+}
