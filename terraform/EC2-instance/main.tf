@@ -5,8 +5,8 @@ provider "aws" {
 resource "aws_instance" "ec2_in" {
   ami           = var.ami_id
   instance_type = var.instance_size
-  subnet_id = var.subnet
   key_name = var.key_name
+  security_groups = ["var.security_groups"]
 
   user_data = "${file("install_docker.sh")}"
 
@@ -26,15 +26,11 @@ resource "aws_eip_association" "eip_assoc" {
 }
 
 resource "aws_security_group" "evans_sg" {
-	  name        = "evans-security-group"
-    vpc_id      = var.vpc_id
 
 	  ingress {
 	    from_port   = 443
 	    to_port     = 443
 	    protocol    = "tcp"
-      cidr_blocks      = [aws_vpc.main.cidr_block]
-      ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
 	  }
       egress {
       from_port        = 0
@@ -58,8 +54,4 @@ resource "aws_volume_attachment" "volume_attach" {
   device_name = var.device_name
   volume_id   = aws_ebs_volume.evans_volume.id
   instance_id = aws_instance.ec2_in.id
-}
-
-resource "aws_vpc" "main" {
-  cidr_block = "68.230.0.0/16"
 }

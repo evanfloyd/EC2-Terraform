@@ -6,16 +6,12 @@ variable "instance_size" {
   default = "t2.micro"
 }
 
-variable "subnet" {
-  default = "subnet-0585406403343a892"
-}
-
 variable "instance_name" {
   default = "evans-terraform"
 }
 
-variable "cidr_blocks" {
-  default = "68.230.55.226"
+variable "security_groups" {
+  default = "evans_sg"
 }
 
 variable "vpc_id" {
