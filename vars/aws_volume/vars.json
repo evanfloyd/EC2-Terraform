@@ -1,7 +1,0 @@
-{
-    "TF_VAR_availability_zone": "us-east-1",
-    "TF_VAR_size": "8",
-    "TF_VAR_name": "evans_volume",
-    "TF_VAR_device_name": "/dev/sdh"
-  }
-  

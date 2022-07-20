@@ -4,6 +4,10 @@
     "TF_VAR_subnet": "subnet-0585406403343a892",
     "TF_VAR_instance_name": "evans-terraform",
     "TF_VAR_cidr_blocks": "68.230.55.226",
-    "TF_VAR_vpc_id": "vpc-0d3dd930d8dfb97e3"
+    "TF_VAR_vpc_id": "vpc-0d3dd930d8dfb97e3",
+    "TF_VAR_availability_zone": "us-east-1",
+    "TF_VAR_size": "8",
+    "TF_VAR_name": "evans_volume",
+    "TF_VAR_device_name": "/dev/sdh"    
   }
   
