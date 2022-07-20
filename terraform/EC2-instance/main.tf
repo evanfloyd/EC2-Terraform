@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1c"
+  region = "us-east-1"
 }
 
 resource "aws_instance" "ec2_in" {
@@ -7,6 +7,7 @@ resource "aws_instance" "ec2_in" {
   instance_type = var.instance_size
   key_name = var.key_name
   vpc_security_group_ids = ["${aws_security_group.evans_sg.id}"]
+  availability_zone = var.availability_zone
 
   user_data = "${file("install_docker.sh")}"
 
