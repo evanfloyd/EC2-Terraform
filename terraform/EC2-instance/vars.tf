@@ -14,8 +14,8 @@ variable "security_groups" {
   default = "evans_sg"
 }
 
-variable "vpc_id" {
-  default = "vpc-0d3dd930d8dfb97e3"
+variable "cidr_block" {
+  default = "172.31.0.0/16"
 }
 
 variable "availability_zone" {
