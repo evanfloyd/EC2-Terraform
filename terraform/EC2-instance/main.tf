@@ -59,3 +59,7 @@ resource "aws_volume_attachment" "volume_attach" {
   volume_id   = aws_ebs_volume.evans_volume.id
   instance_id = aws_instance.ec2_in.id
 }
+
+resource "aws_vpc" "main" {
+  cidr_block = "var.cidr_blocks/16"
+}
