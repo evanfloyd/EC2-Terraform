@@ -6,7 +6,6 @@ resource "aws_instance" "ec2_in" {
   ami           = var.ami_id
   instance_type = var.instance_size
   key_name = var.key_name
-  security_groups = ["var.security_groups"]
 
   user_data = "${file("install_docker.sh")}"
 
