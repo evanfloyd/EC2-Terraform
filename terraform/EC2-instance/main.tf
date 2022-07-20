@@ -20,8 +20,8 @@ resource "aws_eip" "evans_eip" {
 }
 
 resource "aws_eip_association" "eip_assoc" {
-  instance_id   = aws_instance.myec2.id
-  allocation_id = aws_eip.myeip.id
+  instance_id   = aws_instance.ec2_in.id
+  allocation_id = aws_eip.evans_eip.id
 }
 
 resource "aws_security_group" "evans_sg" {
