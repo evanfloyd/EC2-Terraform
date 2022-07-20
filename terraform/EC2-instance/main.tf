@@ -29,8 +29,8 @@ resource "aws_eip_association" "eip_assoc" {
 resource "aws_security_group" "evans_sg" {
 
 	  ingress {
-	    from_port   = 443
-	    to_port     = 443
+	    from_port   = 22
+	    to_port     = 22
 	    protocol    = "tcp"
 	  }
       egress {
