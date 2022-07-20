@@ -7,7 +7,8 @@ resource "aws_instance" "ec2_in" {
   instance_type = var.instance_size
   key_name = var.key_name
   security_groups = ["var.security_groups"]
-
+  vpc_id = var.vpc_id
+  
   user_data = "${file("install_docker.sh")}"
 
 
