@@ -37,3 +37,7 @@ variable "name" {
 variable "device_name" {
   default = "/dev/sdh"
 }
+
+variable "key_name" {
+  default = "evans-key"
+}

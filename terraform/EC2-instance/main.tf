@@ -6,6 +6,7 @@ resource "aws_instance" "ec2_in" {
   ami           = var.ami_id
   instance_type = var.instance_size
   subnet_id = var.subnet
+  key_name = var.key_name
 
   user_data = "${file("install_docker.sh")}"
 
