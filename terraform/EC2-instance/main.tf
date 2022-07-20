@@ -31,7 +31,7 @@ resource "aws_security_group" "evans_sg" {
 	    from_port   = 443
 	    to_port     = 443
 	    protocol    = "tcp"
-      cidr_blocks = [var.cidr_blocks/32] 
+      cidr_blocks = [${var.cidr_blocks}/32] 
 	  }
       egress {
       from_port        = 0
