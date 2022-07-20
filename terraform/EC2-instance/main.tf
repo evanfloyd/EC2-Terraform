@@ -33,7 +33,8 @@ resource "aws_security_group" "evans_sg" {
 	    from_port   = 443
 	    to_port     = 443
 	    protocol    = "tcp"
-      cidr_blocks = ["${var.cidr_blocks}/32"] 
+      cidr_blocks      = [aws_vpc.main.cidr_block]
+      ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
 	  }
       egress {
       from_port        = 0
